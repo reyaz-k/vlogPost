@@ -1,4 +1,11 @@
 import asyncio
+import sys
+
+if sys.platform.startswith("win"):
+    asyncio.set_event_loop_policy(
+        asyncio.WindowsSelectorEventLoopPolicy()
+    )
+
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
